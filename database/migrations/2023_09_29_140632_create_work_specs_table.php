@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('size');
             $table->string('format');
             $table->string('article');
-            $table->string('severity')->default('normal');
-            $table->string('quantity')->default('1');
-            $table->string('unit')->default('枚');
-            $table->boolean('outsourcing')->default('false');
-            $table->bigInteger('outsourcing_id')->nullable();
+            $table->string('severity');
+            $table->integer('quantity');
+            $table->string('unit');
+            $table->boolean('outsourcing');
+            $table->unsignedBigInteger('outsourcing_id')->nullable();
             $table->integer('subttl_price_incl')->nullable();
             $table->integer('subttl_price_exc')->nullable();
             $table->timestamps();

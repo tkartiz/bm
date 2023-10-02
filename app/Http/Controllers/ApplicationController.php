@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\application;
 use App\Http\Requests\StoreapplicationRequest;
 use App\Http\Requests\UpdateapplicationRequest;
+use Inertia\Inertia;
 
 class ApplicationController extends Controller
 {
@@ -15,7 +16,9 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('applications/index',[
+            'applications' => application::all()
+        ]);
     }
 
     /**

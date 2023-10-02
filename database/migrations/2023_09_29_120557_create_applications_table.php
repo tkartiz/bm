@@ -23,7 +23,11 @@ return new class extends Migration
             $table->integer('revision')->default('0');
             $table->integer('ttl_price_incl')->nullable();
             $table->integer('ttl_price_exc')->nullable();
-            $table->bigInteger('works_id')->nullable();
+            $table->unsignedBigInteger('works1_id');
+            $table->unsignedBigInteger('works2_id')->nullable();
+            $table->unsignedBigInteger('works3_id')->nullable();
+            $table->unsignedBigInteger('works4_id')->nullable();
+            $table->unsignedBigInteger('works5_id')->nullable();
             $table->timestamps();
         });
     }
