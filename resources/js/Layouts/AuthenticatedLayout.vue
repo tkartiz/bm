@@ -34,7 +34,10 @@ const showingNavigationDropdown = ref(false);
                                     Dashboard
                                 </NavLink>
                                 <NavLink :href="route('applications.index')" :active="route().current('applications.index')">
-                                    制作依頼申請
+                                    制作依頼・一覧
+                                </NavLink>
+                                <NavLink :href="route('applications.create')" :active="route().current('applications.create')">
+                                    制作依頼・新規申請
                                 </NavLink>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 defineProps({ applications: Array })
 </script>
 
@@ -50,7 +50,7 @@ defineProps({ applications: Array })
                                 </tr>
                             </tbody>
                         </table>
-                        <button class="w-full bg-indigo-700 font-semibold text-white py-2 px-4 rounded">新規申請</button>
+                        <!-- <Link as="button" :href="route('applications.create')" class="w-full bg-indigo-700 font-semibold text-white py-2 px-4 rounded">新規申請</Link> -->
                     </div>
                 </div>
             </div>
