@@ -35,7 +35,7 @@ const storeApplication = () => {
                 <div class="overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="py-3 text-gray-900">
                         <section class="text-gray-600 body-font relative">
-                            <form @submit.prevent="storeApplication(user.id)">
+                            <form @submit.prevent="storeApplication">
                                 <!-- 依頼者情報 -->
                                 <div class="px-5 py-2 bg-white mb-5">
                                     <div class="p-2 w-full flex flex-wrap text-sm text-gray-600">
