@@ -6,6 +6,7 @@ use App\Models\application;
 use App\Http\Requests\StoreapplicationRequest;
 use App\Http\Requests\UpdateapplicationRequest;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends Controller
 {
@@ -16,7 +17,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        return Inertia::render('applications/index',[
+        return Inertia::render('applications/index', [
             'applications' => application::all()
         ]);
     }
@@ -28,7 +29,9 @@ class ApplicationController extends Controller
      */
     public function create()
     {
-        return Inertia::render('applications/create');
+        return Inertia::render('applications/create', [
+            'user' => Auth::user()
+        ]);
     }
 
     /**
@@ -39,7 +42,15 @@ class ApplicationController extends Controller
      */
     public function store(StoreapplicationRequest $request)
     {
-        //
+        application::create([
+            'client_id' => user.id,
+            'subject' => $request->subject,
+            'desired_dlvd_at' => $request->desired_dlvd_at,
+            'works_quantity' => $request->works_quantity,
+            'severity' => $request->severity,
+        ]);
+
+        return to_route('applications.index');
     }
 
     /**

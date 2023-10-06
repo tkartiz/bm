@@ -13,6 +13,7 @@ class application extends Model
         'subject',
         'works_quantity',
         'desired_dlvd_at',
+        'severity',
     ];
 
 }
